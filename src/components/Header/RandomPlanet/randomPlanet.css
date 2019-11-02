@@ -1,0 +1,13 @@
+.random_planet {
+  margin-top: 15px;
+}
+
+.random_block {
+  display: flex;
+  justify-content: space-around;
+}
+
+.img_random {
+  width: 200px;
+  border-radius: 100%;
+}
