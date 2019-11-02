@@ -12,7 +12,7 @@ class ItemDetailContainer extends React.Component{
         this.getItemDetail()
     }
     componentDidUpdate(prevProps){
-        if(prevProps != this.props){
+        if(prevProps !== this.props){
             this.getItemDetail()
         }
     }
@@ -31,7 +31,7 @@ class ItemDetailContainer extends React.Component{
                     isPreloader: false
                 }
             })
-        })
+        }).catch(this.onError)
     }
    render(){
         if(this.state.isPreloader){

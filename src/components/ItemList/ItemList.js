@@ -20,7 +20,7 @@ class ItemListContainer extends React.Component{
                     isPreloader: false
                 }
             })
-        })
+        }).catch(this.onError)
     }
     renderItemList = ()=>{
          return   this.state.allPeople.map((e)=>{
@@ -35,7 +35,6 @@ class ItemListContainer extends React.Component{
             })
     }
     render(){
-        console.log(this.props)
         let itemOrPreload = this.state.isPreloader ? <Preloader/> : this.renderItemList();
         return(
             <ul className="container col-12 col-lg-4 mb">
