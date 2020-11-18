@@ -1,3 +1,31 @@
+
+
+# SFRA version
+
+SFRA 4.4.1
+
+### Description of controllers.
+
+*"Account-TestCreareCustomer"* - Creates new customer and redirect to the account page.<br />
+*"Account-TestDeleteCurrentCustomer" *- Deletes current customer and redirect to the home page, available for logged user only.<br />
+*"Cart-TestAddProduct"* - Adds item to the cart, available for guest and logged users as well. <br />
+   As optional params can takes: "sz" - count of products that will be added to cart, defaul vaule - 1,<br />
+   "srule" - sorting rule that will be use for find products, default value - price-low-to-high,<br />
+   "quantity" - quantity for each item that will be added to cart, default value - 1.<br />
+   Example for four items and two quantity of item "Cart-TestAddProduct?sz=4&quantity=2".<br />
+*"Cart-TestClearBasket"* -  Remove all items of current cart. Available for both types of users.<br />
+*"Checkout-Begin"* - Redirects to the checkout page and automatically fills fields for guest and for logged user if hasn't address in profile. <br />
+*"Checkout-TestSetShippingAddress"* - Sets shipping address on basket for guest and logged customer and redirect to the next step of checkout page. <br />Required to has current basket.<br />
+*"Checkout-TestSetBillingAddress?billing=new"* - Endpoint that takes as optional params "billing" - same || new, and set billing address, <br />
+   if "billing" is equal "same" for billing will be used the same address as the shipping, otherwise will be create new one. <br />
+   And redirects to the payment step of checkout page.  Available for guests  and logged users.<br />
+*"Checkout-TestUpdateBillingAddress"* - Updates current billing address if user already has this one.<br />
+*"Payment-TestRemoveAllPaymentInstruments"* - Removes all payment instruments of current basket.<br />
+*"Payment-TestRemoveWalletPaymentInstruments"* - Removes all payment instruments of customer wallet and remove payment instruments on the braintree   side. Available for logged user only.
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
